@@ -43,19 +43,33 @@ body {
   font-variant: common-ligatures contextual;
   letter-spacing: -0.02em;
 }
-b,
-strong,
+h1,
+h2,
 h3,
 h4,
 h5,
 h6 {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  color: #111827 !important;
+}
+
+b,
+strong {
   font-variation-settings: "wght" 650;
+  color: #000000 !important;
+  font-weight: 700;
 }
 h1 {
-  font-variation-settings: "wght" 850;
+  font-weight: 700;
 }
 h2 {
-  font-variation-settings: "wght" 750;
+  font-weight: 600;
+}
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
 }
 
 @media screen and (min-device-pixel-ratio: 1.5),
@@ -72,12 +86,79 @@ details summary {
 
 img.next-image {
   margin: 0;
+  border-radius: 12px;
+}
+
+img {
+  border-radius: 12px;
 }
 
 .prose a {
-  color: #0074de;
+  color: #7c3aed;
+  text-decoration: none;
+}
+
+a {
+  color: #7c3aed !important;
+  text-decoration: none !important;
+}
+
+/* Override for post list titles - make them black */
+main a.nx-font-semibold,
+main .nx-font-semibold > a,
+.nx-post-item a,
+div[class*="post"] a.nx-font-semibold {
+  color: #000000 !important;
 }
 
 .nav-line .nav-link {
-  color: #69778c;
+  color: #7c3aed;
+}
+
+/* Force light mode */
+html, body {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}
+
+/* Override dark mode styles */
+html.dark body {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}
+
+html.dark .nx-prose {
+  color: #374151 !important;
+}
+
+html.dark a {
+  color: #7c3aed !important;
+  text-decoration: none !important;
+}
+
+html.dark .nav-line .nav-link {
+  color: #7c3aed !important;
+}
+
+/* Fix tag/badge backgrounds to pale grey */
+.nx-bg-gray-200,
+.nx-bg-gray-100,
+html.dark .nx-bg-gray-200,
+html.dark .nx-bg-gray-600,
+html.dark .nx-bg-neutral-800 {
+  background-color: #f3f4f6 !important;
+  color: #374151 !important;
+}
+
+/* Force article titles to black */
+article h1,
+article a h1,
+.post-item a,
+.post-item h3,
+.nx-font-semibold,
+.nx-font-semibold a,
+a.nx-font-semibold,
+.nx-mb-2 a,
+article > a {
+  color: #000000 !important;
 }
